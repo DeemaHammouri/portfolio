@@ -8,7 +8,6 @@ import {
   Globe,
   Menu,
   X,
-  Sparkles,
   Download,
   BadgeCheck,
 } from "lucide-react";
@@ -32,8 +31,6 @@ const skills = [
       "Journey Mapping",
       "Usability Testing",
       "Information Architecture",
-      
-    
     ],
   },
   {
@@ -100,6 +97,7 @@ const processSteps = [
     text: "I improve the experience through feedback, testing, and iteration to make the final product more effective, usable, and user-centered.",
   },
 ];
+
 function ProcessMap() {
   const sectionRef = useRef<HTMLDivElement | null>(null);
 
@@ -215,8 +213,6 @@ export default function Home() {
             ))}
           </nav>
 
-          
-
           <a
             href="#contact"
             className="hidden rounded-full bg-[#1e1a1c] px-5 py-2.5 text-sm text-white transition hover:opacity-90 md:inline-flex"
@@ -273,8 +269,8 @@ export default function Home() {
             </h1>
 
             <p className="mt-7 max-w-xl text-lg leading-8 text-[#665c60] md:text-xl">
-              I design meaningful digital experiences with a focus on culture,
-              clarity, usability, and emotional connection.
+              I design meaningful digital experiences with a focus on clarity,
+              usability, and emotional connection.
             </p>
 
             <div className="mt-8 space-y-3 text-[#665c60]">
@@ -296,12 +292,14 @@ export default function Home() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="#project"
-                className="inline-flex items-center gap-2 rounded-full bg-[#1e1a1c] px-6 py-3 text-white transition hover:-translate-y-0.5 hover:opacity-95"
-              >
-                View Project
-                <ArrowRight className="h-4 w-4" />
-              </a>
+  href="https://www.behance.net/deemahammouri"
+  target="_blank"
+  rel="noreferrer"
+  className="inline-flex items-center gap-2 rounded-full bg-[#1e1a1c] px-6 py-3 text-white transition hover:-translate-y-0.5 hover:opacity-95"
+>
+  View Project
+  <ArrowRight className="h-4 w-4" />
+</a>
 
               <a
                 href="https://www.behance.net/deemahammouri"
@@ -314,7 +312,8 @@ export default function Home() {
               </a>
 
               <a
-                href="https://drive.google.com/uc?export=download&id=1pxgd0iiMb6xMs-BJm-wzgGamRp0CIGwH"
+                href="/DeemaHammouri-CV.pdf"
+                download="Deema-Hammouri-CV.pdf"
                 className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 transition hover:border-[#d48ea0] hover:text-[#b85f78]"
               >
                 <Download className="h-4 w-4" />
@@ -451,7 +450,7 @@ export default function Home() {
 
                 <div className="mt-10">
                   <a
-                    href="https://www.behance.net/deemahammouri"
+                    href="https://www.behance.net/gallery/246619023/-Hekayat-Makan-UXUI-Case-Study"
                     target="_blank"
                     rel="noreferrer"
                     className="inline-flex items-center gap-2 text-[#b56f82] transition hover:gap-3"
@@ -614,10 +613,6 @@ export default function Home() {
           <h2 className="text-4xl font-semibold md:text-5xl">
             Following the design route from insight to experience
           </h2>
-          <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-[#655c60]">
-            The moving location pin follows the project as it develops through
-            research, direction, structure, design, and refinement.
-          </p>
         </motion.div>
 
         <ProcessMap />
@@ -685,7 +680,8 @@ export default function Home() {
             </a>
 
             <a
-              href="https://drive.google.com/uc?export=download&id=1pxgd0iiMb6xMs-BJm-wzgGamRp0CIGwH"
+              href="/DeemaHammouri-CV.pdf"
+              download="Deema-Hammouri-CV.pdf"
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-[#efbcc9] hover:text-[#efbcc9]"
             >
               <Download className="h-4 w-4" />

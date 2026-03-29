@@ -292,14 +292,12 @@ export default function Home() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-  href="https://www.behance.net/deemahammouri"
-  target="_blank"
-  rel="noreferrer"
-  className="inline-flex items-center gap-2 rounded-full bg-[#1e1a1c] px-6 py-3 text-white transition hover:-translate-y-0.5 hover:opacity-95"
->
-  View Project
-  <ArrowRight className="h-4 w-4" />
-</a>
+                href="#project"
+                className="inline-flex items-center gap-2 rounded-full bg-[#1e1a1c] px-6 py-3 text-white transition hover:-translate-y-0.5 hover:opacity-95"
+              >
+                View Project
+                <ArrowRight className="h-4 w-4" />
+              </a>
 
               <a
                 href="https://www.behance.net/deemahammouri"
@@ -312,8 +310,8 @@ export default function Home() {
               </a>
 
               <a
-                href="/DeemaHammouri-CV.pdf"
-                download="Deema-Hammouri-CV.pdf"
+                href="/DeemaHammouri(cv).pdf"
+                download
                 className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 transition hover:border-[#d48ea0] hover:text-[#b85f78]"
               >
                 <Download className="h-4 w-4" />
@@ -363,9 +361,10 @@ export default function Home() {
 
           <div className="space-y-6 text-lg leading-9 text-[#655c60]">
             <p>
-              My approach combines human-centered design with structured thinking.
-              I’m interested in how users move through interfaces, what builds
-              trust, and how design can turn information into connection.
+              My approach combines human-centered design with structured
+              thinking. I’m interested in how users move through interfaces,
+              what builds trust, and how design can turn information into
+              connection.
             </p>
             <p>
               With a background in Software Engineering, I bring both visual
@@ -408,7 +407,7 @@ export default function Home() {
             className="overflow-hidden rounded-[2.2rem] border border-white/60 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]"
           >
             <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="relative min-h-[430px]">
+              <div className="relative min-h-[430px] bg-[#f7e8ed]">
                 <img
                   src="/hekayat-cover.jpg"
                   alt="Hikayat Makan project preview"
@@ -680,8 +679,8 @@ export default function Home() {
             </a>
 
             <a
-              href="/DeemaHammouri-CV.pdf"
-              download="Deema-Hammouri-CV.pdf"
+              href="/DeemaHammouri(cv).pdf"
+              download
               className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-[#efbcc9] hover:text-[#efbcc9]"
             >
               <Download className="h-4 w-4" />

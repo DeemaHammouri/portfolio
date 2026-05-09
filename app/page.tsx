@@ -15,7 +15,7 @@ import { useRef, useState } from "react";
 
 const navItems = [
   { label: "About", href: "#about" },
-  { label: "Project", href: "#project" },
+  { label: "Projects", href: "#projects" },
   { label: "Skills", href: "#skills" },
   { label: "Experience", href: "#experience" },
   { label: "Process", href: "#process" },
@@ -69,32 +69,32 @@ const processSteps = [
   {
     title: "Research",
     short: "Insights",
-    text: "I gather insights through research methods such as interviews, observation, competitor review, and user behavior analysis to understand real needs and pain points.",
+    text: "I gather insights through research methods such as interviews, observation, competitor review, and user behavior analysis.",
   },
   {
     title: "Define",
     short: "Clarity",
-    text: "I turn research findings into a clear design direction by identifying key challenges, priorities, opportunities, and experience goals.",
+    text: "I turn research findings into a clear design direction by identifying challenges, opportunities, and experience goals.",
   },
   {
     title: "Structure",
     short: "Flows",
-    text: "I organize information, user flows, and content structure to create experiences that feel intuitive, clear, and easy to navigate.",
+    text: "I organize information architecture and user flows to create intuitive experiences.",
   },
   {
     title: "Design",
     short: "Visuals",
-    text: "I translate ideas into polished interfaces with strong hierarchy, consistency, and visual systems that support both usability and aesthetics.",
+    text: "I create polished interfaces with strong hierarchy, consistency, and visual systems.",
   },
   {
     title: "Prototype",
     short: "Interaction",
-    text: "I create interactive prototypes to test how screens, flows, and interactions work together before development.",
+    text: "I build interactive prototypes to test screens, flows, and interactions before development.",
   },
   {
     title: "Refine",
     short: "Iteration",
-    text: "I improve the experience through feedback, testing, and iteration to make the final product more effective, usable, and user-centered.",
+    text: "I improve the experience through testing, feedback, and iteration to make products more effective and user-centered.",
   },
 ];
 
@@ -168,6 +168,7 @@ function ProcessMap() {
                 <p className="text-sm uppercase tracking-[0.28em] text-[#d48ea0]">
                   Step {String(index + 1).padStart(2, "0")}
                 </p>
+
                 <h3 className="mt-2 text-2xl font-semibold text-[#1f1a1c]">
                   {step.title}
                 </h3>
@@ -191,6 +192,8 @@ export default function Home() {
 
   return (
     <main className="bg-[#fff8fa] text-[#1e1a1c] selection:bg-[#d48ea0] selection:text-white">
+      {/* HEADER */}
+
       <header className="sticky top-0 z-50 border-b border-black/5 bg-[#fff8fa]/80 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 md:px-10 lg:px-16">
           <a
@@ -208,6 +211,7 @@ export default function Home() {
                 className="group relative rounded-full px-4 py-2 text-sm text-[#6d6367] transition-colors duration-300 hover:text-[#1e1a1c]"
               >
                 <span className="relative z-10">{item.label}</span>
+
                 <span className="absolute inset-0 rounded-full bg-[#f7e8ed] opacity-0 scale-90 transition-all duration-300 group-hover:scale-100 group-hover:opacity-100" />
               </a>
             ))}
@@ -223,7 +227,6 @@ export default function Home() {
           <button
             onClick={() => setOpen(!open)}
             className="rounded-full border border-black/10 p-2 md:hidden"
-            aria-label="Toggle menu"
           >
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </button>
@@ -236,8 +239,8 @@ export default function Home() {
                 <a
                   key={item.label}
                   href={item.href}
-                  className="rounded-full px-4 py-2 text-sm text-[#6d6367] transition hover:bg-[#f7e8ed] hover:text-black"
                   onClick={() => setOpen(false)}
+                  className="rounded-full px-4 py-2 text-sm text-[#6d6367] transition hover:bg-[#f7e8ed] hover:text-black"
                 >
                   {item.label}
                 </a>
@@ -247,16 +250,20 @@ export default function Home() {
         )}
       </header>
 
+      {/* HERO */}
+
       <section className="relative overflow-hidden">
         <div className="absolute left-[-100px] top-10 h-[260px] w-[260px] rounded-full bg-[#f7dce4]/60 blur-3xl" />
+
         <div className="absolute right-[-80px] top-28 h-[260px] w-[260px] rounded-full bg-[#f4d7df]/50 blur-3xl" />
+
         <div className="absolute bottom-0 left-1/3 h-[180px] w-[180px] rounded-full bg-[#fbe9ee]/70 blur-3xl" />
 
         <div className="mx-auto grid min-h-[92vh] max-w-7xl items-center gap-14 px-6 py-16 md:grid-cols-2 md:px-10 lg:px-16">
           <motion.div
             initial={{ opacity: 0, y: 24 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.65, ease: "easeOut" }}
+            transition={{ duration: 0.65 }}
           >
             <p className="mb-5 text-sm uppercase tracking-[0.36em] text-[#d48ea0]">
               UI/UX Designer
@@ -281,10 +288,7 @@ export default function Home() {
 
               <div className="flex items-center gap-3">
                 <Mail className="h-5 w-5 text-[#d48ea0]" />
-                <a
-                  href="mailto:deemamohammad395@gmail.com"
-                  className="transition hover:text-black"
-                >
+                <a href="mailto:deemamohammad395@gmail.com">
                   deemamohammad395@gmail.com
                 </a>
               </div>
@@ -292,10 +296,10 @@ export default function Home() {
 
             <div className="mt-10 flex flex-wrap gap-4">
               <a
-                href="#project"
-                className="inline-flex items-center gap-2 rounded-full bg-[#1e1a1c] px-6 py-3 text-white transition hover:-translate-y-0.5 hover:opacity-95"
+                href="#projects"
+                className="inline-flex items-center gap-2 rounded-full bg-[#1e1a1c] px-6 py-3 text-white transition hover:-translate-y-0.5"
               >
-                View Project
+                View Projects
                 <ArrowRight className="h-4 w-4" />
               </a>
 
@@ -303,7 +307,7 @@ export default function Home() {
                 href="https://www.behance.net/deemahammouri"
                 target="_blank"
                 rel="noreferrer"
-                className="inline-flex items-center gap-2 rounded-full border border-[#d48ea0] px-6 py-3 text-[#1e1a1c] transition hover:bg-[#d48ea0] hover:text-white"
+                className="inline-flex items-center gap-2 rounded-full border border-[#d48ea0] px-6 py-3 transition hover:bg-[#d48ea0] hover:text-white"
               >
                 <Globe className="h-4 w-4" />
                 Behance
@@ -312,7 +316,7 @@ export default function Home() {
               <a
                 href="/DeemaHammouri(cv).pdf"
                 download
-                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 transition hover:border-[#d48ea0] hover:text-[#b85f78]"
+                className="inline-flex items-center gap-2 rounded-full border border-black/10 bg-white px-6 py-3 transition hover:border-[#d48ea0]"
               >
                 <Download className="h-4 w-4" />
                 Download CV
@@ -321,38 +325,36 @@ export default function Home() {
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, scale: 0.98, y: 20 }}
-            animate={{ opacity: 1, scale: 1, y: 0 }}
-            transition={{ duration: 0.75, delay: 0.12, ease: "easeOut" }}
+            initial={{ opacity: 0, scale: 0.98 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 0.75 }}
             className="relative"
           >
             <div className="absolute inset-0 translate-x-3 translate-y-3 rounded-[2rem] bg-[#f3d9e1]" />
+
             <div className="relative mx-auto max-w-[460px] overflow-hidden rounded-[2rem] border border-white/70 bg-white shadow-[0_16px_38px_rgba(0,0,0,0.05)]">
               <img
                 src="/profile.jpg"
                 alt="Deema Hammouri"
-                className="h-[540px] w-full object-cover transition duration-700 hover:scale-[1.02]"
+                className="h-[540px] w-full object-cover"
               />
             </div>
           </motion.div>
         </div>
       </section>
 
+      {/* ABOUT */}
+
       <section
         id="about"
         className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:px-16"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.22 }}
-          transition={{ duration: 0.55 }}
-          className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]"
-        >
+        <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="mb-3 text-sm uppercase tracking-[0.32em] text-[#d48ea0]">
               About
             </p>
+
             <h2 className="max-w-3xl text-4xl font-semibold leading-tight md:text-5xl">
               I care about designing products that feel intuitive, elegant, and
               genuinely meaningful.
@@ -362,139 +364,191 @@ export default function Home() {
           <div className="space-y-6 text-lg leading-9 text-[#655c60]">
             <p>
               My approach combines human-centered design with structured
-              thinking. I’m interested in how users move through interfaces,
-              what builds trust, and how design can turn information into
-              connection.
+              thinking and visual clarity.
             </p>
+
             <p>
-              With a background in Software Engineering, I bring both visual
-              sensitivity and analytical problem-solving into every project.
+              With a background in Software Engineering, I bring both analytical
+              thinking and creative problem-solving into every project.
             </p>
           </div>
-        </motion.div>
+        </div>
       </section>
 
+      {/* PROJECTS */}
+
       <section
-        id="project"
+        id="projects"
         className="border-y border-black/5 bg-[#fff2f6] py-24"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.2 }}
-            transition={{ duration: 0.55 }}
-            className="mb-14 text-center"
-          >
+          <div className="mb-14 text-center">
             <p className="mb-3 text-sm uppercase tracking-[0.32em] text-[#d48ea0]">
-              Featured Project
+              Featured Projects
             </p>
+
             <h2 className="text-4xl font-semibold md:text-5xl">
-              Hikayat Makan
+              Selected Work
             </h2>
-            <p className="mx-auto mt-5 max-w-3xl text-lg leading-8 text-[#655c60]">
-              A heritage storytelling experience designed to reconnect people
-              with Jordan’s cultural places through story, memory, and more
-              meaningful discovery.
-            </p>
-          </motion.div>
+          </div>
 
-          <motion.div
-            initial={{ opacity: 0, y: 22 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.18 }}
-            transition={{ duration: 0.6 }}
-            className="overflow-hidden rounded-[2.2rem] border border-white/60 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]"
-          >
-            <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
-              <div className="relative min-h-[430px] bg-[#f7e8ed]">
-                <img
-                  src="/hekayat-cover.jpg"
-                  alt="Hikayat Makan project preview"
-                  className="h-full w-full object-cover"
-                />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+          <div className="space-y-10">
+            {/* HIKAYAT MAKAN */}
 
-                <div className="absolute bottom-0 left-0 p-8 md:p-10">
-                  <p className="text-sm uppercase tracking-[0.28em] text-[#f2d3dc]">
-                    Case Study
-                  </p>
-                  <h3 className="mt-3 max-w-2xl text-3xl font-semibold text-white md:text-4xl">
-                    Designing a story-first way to explore heritage and place.
-                  </h3>
+            <div className="overflow-hidden rounded-[2.2rem] border border-white/60 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+              <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
+                <div className="relative min-h-[430px] bg-[#f7e8ed]">
+                  <img
+                    src="/hekayat-cover.jpg"
+                    alt="Hikayat Makan"
+                    className="h-full w-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+
+                  <div className="absolute bottom-0 left-0 p-8 md:p-10">
+                    <p className="text-sm uppercase tracking-[0.28em] text-[#f2d3dc]">
+                      Case Study
+                    </p>
+
+                    <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                      Hikayat Makan
+                    </h3>
+                  </div>
                 </div>
-              </div>
 
-              <div className="flex flex-col justify-between p-8 md:p-10">
-                <div>
-                  <div className="mb-8 flex flex-wrap gap-2">
-                    {["UX Research", "Storytelling", "UI Design", "Prototype"].map(
-                      (tag) => (
+                <div className="flex flex-col justify-between p-8 md:p-10">
+                  <div>
+                    <div className="mb-8 flex flex-wrap gap-2">
+                      {[
+                        "UX Research",
+                        "Storytelling",
+                        "UI Design",
+                        "Prototype",
+                      ].map((tag) => (
                         <span
                           key={tag}
                           className="rounded-full bg-[#fbeaf0] px-4 py-2 text-sm text-[#b56f82]"
                         >
                           {tag}
                         </span>
-                      )
-                    )}
+                      ))}
+                    </div>
+
+                    <p className="leading-8 text-[#655c60]">
+                      A heritage storytelling experience designed to reconnect
+                      people with Jordan’s cultural places through story and
+                      memory.
+                    </p>
                   </div>
 
-                  <p className="leading-8 text-[#655c60]">
-                    Hikayat Makan transforms heritage exploration from a simple
-                    visit into a deeper cultural journey shaped by narrative,
-                    atmosphere, and human memory.
-                  </p>
-                </div>
-
-                <div className="mt-10">
-                  <a
-                    href="https://www.behance.net/gallery/246619023/-Hekayat-Makan-UXUI-Case-Study"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="inline-flex items-center gap-2 text-[#b56f82] transition hover:gap-3"
-                  >
-                    View Full Case Study
-                    <ArrowRight className="h-4 w-4" />
-                  </a>
+                  <div className="mt-10">
+                    <a
+                      href="https://www.behance.net/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-[#b56f82] transition hover:gap-3"
+                    >
+                      View Case Study
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
-          </motion.div>
+
+            {/* ELEVI */}
+
+            <div className="overflow-hidden rounded-[2.2rem] border border-white/60 bg-white shadow-[0_20px_60px_rgba(0,0,0,0.06)]">
+              <div className="grid lg:grid-cols-[1.15fr_0.85fr]">
+                <div className="relative min-h-[430px] bg-[#f7e8ed]">
+                  <img
+                    src="/elevi.jpeg"
+                    alt="Elevi"
+                    className="h-full w-full object-cover"
+                  />
+
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/5 to-transparent" />
+
+                  <div className="absolute bottom-0 left-0 p-8 md:p-10">
+                    <p className="text-sm uppercase tracking-[0.28em] text-[#f2d3dc]">
+                      Product Design
+                    </p>
+
+                    <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
+                      Elevi
+                    </h3>
+                  </div>
+                </div>
+
+                <div className="flex flex-col justify-between p-8 md:p-10">
+                  <div>
+                    <div className="mb-8 flex flex-wrap gap-2">
+                      {[
+                        "Skill Gap Analysis",
+                        "UX/UI",
+                        "Dashboard",
+                        "Career Growth",
+                      ].map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-[#fbeaf0] px-4 py-2 text-sm text-[#b56f82]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    <p className="leading-8 text-[#655c60]">
+                      Elevi is a platform focused on helping users identify
+                      skill gaps and build clear professional growth paths
+                      through personalized learning experiences.
+                    </p>
+                  </div>
+
+                  <div className="mt-10">
+                    <a
+                      href="https://www.behance.net/"
+                      target="_blank"
+                      rel="noreferrer"
+                      className="inline-flex items-center gap-2 text-[#b56f82] transition hover:gap-3"
+                    >
+                      View Project
+                      <ArrowRight className="h-4 w-4" />
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </section>
+
+      {/* SKILLS */}
 
       <section
         id="skills"
         className="border-y border-black/5 bg-[#fff8fa] py-24"
       >
         <div className="mx-auto max-w-7xl px-6 md:px-10 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.18 }}
-            transition={{ duration: 0.55 }}
-            className="mb-14 text-center"
-          >
+          <div className="mb-14 text-center">
             <p className="mb-3 text-sm uppercase tracking-[0.32em] text-[#d48ea0]">
               Skills
             </p>
+
             <h2 className="text-4xl font-semibold md:text-5xl">
               What supports my design approach
             </h2>
-          </motion.div>
+          </div>
 
           <div className="grid gap-6 md:grid-cols-2">
-            {skills.map((group, index) => (
-              <motion.div
+            {skills.map((group) => (
+              <div
                 key={group.title}
-                initial={{ opacity: 0, y: 22 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.45, delay: index * 0.06 }}
                 className="rounded-[1.75rem] border border-white/70 bg-white p-8 shadow-[0_12px_30px_rgba(0,0,0,0.04)]"
               >
                 <h3 className="mb-5 text-2xl font-semibold">{group.title}</h3>
+
                 <ul className="space-y-3 text-[#554d50]">
                   {group.items.map((item) => (
                     <li key={item} className="flex items-start gap-3">
@@ -503,150 +557,102 @@ export default function Home() {
                     </li>
                   ))}
                 </ul>
-              </motion.div>
+              </div>
             ))}
           </div>
         </div>
       </section>
+
+      {/* EXPERIENCE */}
 
       <section
         id="experience"
         className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:px-16"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.55 }}
-          className="mb-14 text-center"
-        >
+        <div className="mb-14 text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.25em] text-[#d48ea0]">
             Experience
           </p>
-          <h2 className="text-4xl font-semibold md:text-5xl">My background</h2>
-        </motion.div>
 
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.15 }}
-          transition={{ duration: 0.55 }}
-          className="mx-auto max-w-4xl rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_14px_38px_rgba(0,0,0,0.04)] md:p-10"
-        >
+          <h2 className="text-4xl font-semibold md:text-5xl">
+            My background
+          </h2>
+        </div>
+
+        <div className="mx-auto max-w-4xl rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_14px_38px_rgba(0,0,0,0.04)] md:p-10">
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div>
               <h3 className="text-2xl font-semibold">UI/UX Intern</h3>
+
               <p className="mt-1 text-lg text-[#d48ea0]">
                 Al-Hussein Technical University (HTU)
               </p>
             </div>
-            <p className="text-[#6b6b6b]">Oct 2025 – Feb 2026</p>
-          </div>
 
-          <p className="mt-6 text-base font-medium text-[#b56f82]">
-            340+ hours of intensive UX/UI training and hands-on practice
-          </p>
+            <p className="text-[#6b6b6b]">2025 – 2026</p>
+          </div>
 
           <ul className="mt-8 space-y-4 text-[#4e4e4e]">
-            <li>• Designed end-to-end UX/UI solutions across the full design lifecycle.</li>
-            <li>• Conducted research to uncover user needs and behavior patterns.</li>
-            <li>• Built personas, journeys, wireframes, and prototypes in Figma.</li>
-            <li>• Applied usability principles, design systems, and accessibility basics.</li>
-            <li>• Combined design thinking with technical understanding to improve product clarity.</li>
+            <li>
+              • Designed end-to-end UX/UI solutions across the full design
+              lifecycle.
+            </li>
+
+            <li>
+              • Built personas, user journeys, wireframes, and prototypes.
+            </li>
+
+            <li>
+              • Applied usability principles, design systems, and accessibility
+              basics.
+            </li>
           </ul>
-        </motion.div>
-      </section>
-
-      <section className="border-y border-black/5 bg-[#fff2f6] py-24">
-        <div className="mx-auto max-w-5xl px-6 text-center md:px-10 lg:px-16">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true, amount: 0.18 }}
-            transition={{ duration: 0.55 }}
-          >
-            <p className="mb-3 text-sm uppercase tracking-[0.25em] text-[#d48ea0]">
-              Why Work With Me
-            </p>
-            <h2 className="text-4xl font-semibold md:text-5xl">
-              Thoughtful, structured, and user-focused
-            </h2>
-          </motion.div>
-
-          <div className="mt-12 grid gap-5 md:grid-cols-2">
-            {[
-              "I design with purpose, not assumptions.",
-              "I combine creativity with structured thinking.",
-              "I focus on real user problems and usable solutions.",
-              "I care about clarity, accessibility, and consistency.",
-            ].map((item, index) => (
-              <motion.div
-                key={item}
-                initial={{ opacity: 0, y: 18 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true, amount: 0.15 }}
-                transition={{ duration: 0.45, delay: index * 0.05 }}
-                className="rounded-[1.5rem] border border-white/70 bg-white p-6 text-left shadow-[0_12px_30px_rgba(0,0,0,0.04)]"
-              >
-                <p className="text-lg leading-8 text-[#4e4e4e]">{item}</p>
-              </motion.div>
-            ))}
-          </div>
         </div>
       </section>
+
+      {/* PROCESS */}
 
       <section
         id="process"
         className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:px-16"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.55 }}
-          className="mb-16 text-center"
-        >
+        <div className="mb-16 text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.32em] text-[#d48ea0]">
             Process Journey
           </p>
+
           <h2 className="text-4xl font-semibold md:text-5xl">
             Following the design route from insight to experience
           </h2>
-        </motion.div>
+        </div>
 
         <ProcessMap />
       </section>
+
+      {/* CONTACT */}
 
       <section
         id="contact"
         className="border-t border-black/5 bg-[#1f1a1c] px-6 py-24 text-white md:px-10 lg:px-16"
       >
-        <motion.div
-          initial={{ opacity: 0, y: 22 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.18 }}
-          transition={{ duration: 0.55 }}
-          className="mx-auto max-w-4xl text-center"
-        >
+        <div className="mx-auto max-w-4xl text-center">
           <p className="mb-3 text-sm uppercase tracking-[0.32em] text-[#efbcc9]">
             Contact
           </p>
+
           <h2 className="text-4xl font-semibold leading-tight md:text-6xl">
-            Let’s create digital experiences with more clarity, warmth, and meaning.
+            Let’s create digital experiences with more clarity and meaning.
           </h2>
 
           <p className="mx-auto mt-6 max-w-2xl text-lg leading-8 text-white/72">
-            I’m open to junior UI/UX opportunities and thoughtful
-            creative collaborations.
+            I’m open to junior UI/UX opportunities and creative collaborations.
           </p>
 
           <div className="mt-10 flex flex-col items-center gap-4 text-white/80">
             <div className="flex items-center gap-3">
               <Mail className="h-5 w-5 text-[#efbcc9]" />
-              <a
-                href="mailto:deemamohammad395@gmail.com"
-                className="hover:text-white"
-              >
+
+              <a href="mailto:deemamohammad395@gmail.com">
                 deemamohammad395@gmail.com
               </a>
             </div>
@@ -659,7 +665,7 @@ export default function Home() {
 
           <div className="mt-10 flex flex-wrap justify-center gap-4">
             <a
-              href="https://www.linkedin.com/in/deema-hammouri-6178ba37b/"
+              href="https://www.linkedin.com/"
               target="_blank"
               rel="noreferrer"
               className="inline-flex items-center gap-2 rounded-full bg-white px-6 py-3 text-black transition hover:opacity-90"
@@ -677,17 +683,8 @@ export default function Home() {
               <Globe className="h-4 w-4" />
               Behance
             </a>
-
-            <a
-              href="/DeemaHammouri(cv).pdf"
-              download
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 px-6 py-3 text-white transition hover:border-[#efbcc9] hover:text-[#efbcc9]"
-            >
-              <Download className="h-4 w-4" />
-              CV
-            </a>
           </div>
-        </motion.div>
+        </div>
       </section>
     </main>
   );

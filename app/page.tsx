@@ -513,7 +513,7 @@ export default function Home() {
                       rel="noreferrer"
                       className="inline-flex items-center gap-2 text-[#b56f82] transition hover:gap-3"
                     >
-                      View Project
+                      View Case Study
                       <ArrowRight className="h-4 w-4" />
                     </a>
                   </div>
@@ -569,47 +569,49 @@ export default function Home() {
         id="experience"
         className="mx-auto max-w-7xl px-6 py-24 md:px-10 lg:px-16"
       >
-        <div className="mb-14 text-center">
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.18 }}
+          transition={{ duration: 0.55 }}
+          className="mb-14 text-center"
+        >
           <p className="mb-3 text-sm uppercase tracking-[0.25em] text-[#d48ea0]">
             Experience
           </p>
+          <h2 className="text-4xl font-semibold md:text-5xl">My background</h2>
+        </motion.div>
 
-          <h2 className="text-4xl font-semibold md:text-5xl">
-            My background
-          </h2>
-        </div>
-
-        <div className="mx-auto max-w-4xl rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_14px_38px_rgba(0,0,0,0.04)] md:p-10">
+        <motion.div
+          initial={{ opacity: 0, y: 22 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          viewport={{ once: true, amount: 0.15 }}
+          transition={{ duration: 0.55 }}
+          className="mx-auto max-w-4xl rounded-[2rem] border border-black/5 bg-white p-8 shadow-[0_14px_38px_rgba(0,0,0,0.04)] md:p-10"
+        >
           <div className="flex flex-col gap-4 md:flex-row md:items-start md:justify-between">
             <div>
               <h3 className="text-2xl font-semibold">UI/UX Intern</h3>
-
               <p className="mt-1 text-lg text-[#d48ea0]">
                 Al-Hussein Technical University (HTU)
               </p>
             </div>
-
-            <p className="text-[#6b6b6b]">2025 – 2026</p>
+            <p className="text-[#6b6b6b]">Oct 2025 – Feb 2026</p>
           </div>
 
+          <p className="mt-6 text-base font-medium text-[#b56f82]">
+            340+ hours of intensive UX/UI training and hands-on practice
+          </p>
+
           <ul className="mt-8 space-y-4 text-[#4e4e4e]">
-            <li>
-              • Designed end-to-end UX/UI solutions across the full design
-              lifecycle.
-            </li>
-
-            <li>
-              • Built personas, user journeys, wireframes, and prototypes.
-            </li>
-
-            <li>
-              • Applied usability principles, design systems, and accessibility
-              basics.
-            </li>
+            <li>• Designed end-to-end UX/UI solutions across the full design lifecycle.</li>
+            <li>• Conducted research to uncover user needs and behavior patterns.</li>
+            <li>• Built personas, journeys, wireframes, and prototypes in Figma.</li>
+            <li>• Applied usability principles, design systems, and accessibility basics.</li>
+            <li>• Combined design thinking with technical understanding to improve product clarity.</li>
           </ul>
-        </div>
+        </motion.div>
       </section>
-
       {/* PROCESS */}
 
       <section

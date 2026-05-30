@@ -472,7 +472,7 @@ export default function Home() {
 
                   <div className="absolute bottom-0 left-0 p-8 md:p-10">
                     <p className="text-sm uppercase tracking-[0.28em] text-[#f2d3dc]">
-                      Product Design
+                      Case Study
                     </p>
 
                     <h3 className="mt-3 text-3xl font-semibold text-white md:text-4xl">
